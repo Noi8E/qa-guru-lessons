@@ -55,10 +55,6 @@ class PracticeFormTests {
         $("#genterWrapper").$(byText(studentGender)).click();
         $x("//*[@class='custom-control custom-radio custom-control-inline']//*[@id='gender-radio-3']/..").click();
         $("[for=gender-radio-2]").click();
-        $("[for=gender-radio-3]").click();
-        $("[for=gender-radio-1]").click();
-        $("[for=gender-radio-2]").click();
-        $("[for=gender-radio-3]").click();
         $("[for=gender-radio-1]").click();
         $("#userNumber").setValue(phone);
         $("#dateOfBirthInput").click();
@@ -74,8 +70,7 @@ class PracticeFormTests {
         $("#currentAddress").setValue(currentAddress);
         $("#state").find("input").setValue("Har").pressEnter();
         $("#city").find("input").setValue("Pan").pressEnter();
-        $("#submit").scrollTo();
-        $("#submit").click();
+        $("#submit").scrollTo().click();
 
 
         //Проверяем что окно с информацией отображается
