@@ -4,9 +4,8 @@ import com.github.javafaker.Faker;
 
 import java.util.Random;
 
-public class TestData {
+public  class TestData {
 
-    Random r = new Random();
 
     public String firstName = new Faker().name().firstName();
     public String lastName = new Faker().name().lastName();
@@ -18,7 +17,14 @@ public class TestData {
     public String monthCalendar = "July";
     public String yearCalendar = new Faker().random().nextInt(1923,2020).toString();
 
-    public String subjectValue1 = "a";
-    public String subjectValue2 = "t";
+    public String subjectValue1 = "Maths";
+    public String subjectValue2 = "Chemistry";
+
+    public String rndHobbies1 = "Sports";
+    public String rndHobbies2 = "Reading";
+
+    public String rndAddres = new Faker().address().fullAddress();
+    public String rndState = "Haryana";
+    public String rndCity = "Panipat";
 
 }
