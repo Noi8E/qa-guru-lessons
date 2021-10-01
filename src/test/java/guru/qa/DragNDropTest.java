@@ -10,18 +10,7 @@ import org.junit.jupiter.api.Test;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class DragNDropTest {
-    @BeforeAll
-    static void sayHello() {
-        System.out.println("Hi this is simple test for demo.qa\n");
-        Configuration.startMaximized = true;
-    }
-
-    @AfterAll
-    static void sayGoodBye() {
-        System.out.println("Bye guys!");
-        Selenide.closeWebDriver();
-    }
+public class DragNDropTest extends TestBase {
 
     @Test
     void DragNDropIsWorked() {

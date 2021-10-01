@@ -28,7 +28,6 @@ public class PracticeFormTests extends TestBase {
 
         beforeAll();
         registrationPage.openPage();
-
         registrationPage.typeFirstName(firstName);
         registrationPage.typeLastName(lastName);
         registrationPage.typeEmail(userEmail);
