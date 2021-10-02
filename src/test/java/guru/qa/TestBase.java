@@ -2,7 +2,9 @@ package guru.qa;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
+import guru.qa.helpers.Attach;
 import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
@@ -22,6 +24,14 @@ public class TestBase extends TestData {
     static void beforeAll() {
         Configuration.startMaximized = true;
         Configuration.baseUrl = "https://demoqa.com";
+    }
+
+    @AfterEach
+    public void tearDown() {
+        Attach.addVideo();
+        Attach.pageSource();
+        Attach.browserConsoleLogs();
+        Attach.screenshotAs("screenshot");
     }
 
     @AfterAll
