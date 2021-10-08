@@ -1,15 +1,16 @@
-package tests.properties;
+package properties;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class SystemProps {
     @Test
+    @Tag("props")
     void someTest() {
         String val = System.getProperty("value");
-        System.out.println(val);
     }
     @Test
+    @Tag("props")
     void someTest1() {
         System.setProperty("value", "an_value");
         String val = System.getProperty("value","def_props");
