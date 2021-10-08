@@ -45,7 +45,7 @@ public class PracticeFormTests extends TestBase {
         registrationPage.checkFinalTable("Date of Birth", dayCalendar + " " + monthCalendar + "," + yearCalendar);
         registrationPage.checkFinalTable("Subjects", subjectValue1 + ", " + subjectValue2 );
         registrationPage.checkFinalTable("Hobbies", rndHobbies1 + ", " + rndHobbies2);
-        registrationPage.checkFinalTable("Picture", "BoJack-on-Behance.png");
+        registrationPage.checkFinalTable("Picture", "images/BoJack-on-Behance.png");
         registrationPage.checkFinalTable("Address", rndAddres);
         registrationPage.checkFinalTable("State and City", rndState + " " + rndCity);
 
