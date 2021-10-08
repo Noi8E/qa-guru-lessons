@@ -1,8 +1,5 @@
-package guru.qa;
+package tests;
 
-import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
-import com.codeborne.selenide.SelenideElement;
 import guru.qa.pages.RegistrationPage;
 import guru.qa.pages.components.CalendarComponent;
 import guru.qa.pages.components.HobbiesComponent;
@@ -10,11 +7,6 @@ import guru.qa.pages.components.SubjectComponent;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
-
-import static com.codeborne.selenide.Selectors.*;
-import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTests extends TestBase {
 

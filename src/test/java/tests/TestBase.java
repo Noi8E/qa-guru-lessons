@@ -1,8 +1,8 @@
-package guru.qa;
+package tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.Selenide;
-import guru.qa.helpers.Attach;
+import helpers.Attach;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -21,7 +21,7 @@ public class TestBase extends TestData {
         Configuration.startMaximized = true;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
-    static void beforeAll() {
+    protected static void beforeAll() {
         Configuration.startMaximized = true;
         Configuration.baseUrl = "https://demoqa.com";
     }

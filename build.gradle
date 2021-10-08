@@ -48,3 +48,8 @@ tasks.withType(Test) {
         }
     }
 }
+task props_test(type: Test) {
+    useJUnitPlatform{
+        includeTags "props"
+    }
+}
