@@ -9,18 +9,23 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase extends TestData {
+    public static String loginForSelenoid = System.getProperty("login", "user1");
+    public static String passwordForSelenoid = System.getProperty("password", "1234");
+    public static String selenoidRemoteAddress = System.getProperty("selenoidRemoteAddress", "selenoid.autotests.cloud/wd/hub/");
 
 
     @BeforeAll
     static void sayHello() {
         System.out.println("Hi this is simple test for demo.qa\n");
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC",true);
-        capabilities.setCapability("enableVideo",true);
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
         Configuration.startMaximized = true;
-        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
+        Configuration.remote = String.format("https://%s:%s@%s", loginForSelenoid,passwordForSelenoid,selenoidRemoteAddress);
     }
+
     protected static void beforeAll() {
         Configuration.startMaximized = true;
         Configuration.baseUrl = "https://demoqa.com";

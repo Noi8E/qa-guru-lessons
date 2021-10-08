@@ -2,8 +2,11 @@ package properties;
 
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
+import tests.TestBase;
 
-public class SystemProps {
+import java.lang.module.Configuration;
+
+public class SystemProps extends TestBase {
     @Test
     @Tag("props")
     void someTest() {
@@ -25,6 +28,7 @@ public class SystemProps {
         System.out.println("browser is" + val);
         System.out.println("version is" + val2);
         System.out.println("resolution is" + val3);
+        System.out.println(passwordForSelenoid);
     }
 
 }
