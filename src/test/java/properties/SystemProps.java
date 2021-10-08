@@ -22,9 +22,9 @@ public class SystemProps {
         String val = System.getProperty("browser","chrome");
         String val2 = System.getProperty("version", "90");
         String val3 = System.getProperty("resolution", "100*100");
-        System.out.println(val);
-        System.out.println(val2);
-        System.out.println(val3);
+        System.out.println("browser is" + val);
+        System.out.println("version is" + val2);
+        System.out.println("resolution is" + val3);
     }
 
 }
