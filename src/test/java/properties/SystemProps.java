@@ -28,6 +28,7 @@ public class SystemProps extends TestBase {
         System.out.println("browser is" + val);
         System.out.println("version is" + val2);
         System.out.println("resolution is" + val3);
+        System.out.println(selenoidRemoteAddress);
     }
 
 }
