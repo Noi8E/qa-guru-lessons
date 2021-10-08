@@ -20,7 +20,9 @@ public class SystemProps {
     @Tag("props")
     void someTest2() {
         String val = System.getProperty("browser","chrome");
+        String val2 = System.getProperty("version", "90");
         System.out.println(val);
+        System.out.println(val2);
     }
 
 }
