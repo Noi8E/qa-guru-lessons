@@ -9,8 +9,6 @@ import org.junit.jupiter.api.BeforeAll;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase extends TestData {
-    public static String loginForSelenoid = System.getProperty("login", "user1");
-    public static String passwordForSelenoid = System.getProperty("password", "1234");
     public static String selenoidRemoteAddress = System.getProperty("selenoidRemoteAddress", "selenoid.autotests.cloud/wd/hub/");
 
 
@@ -23,7 +21,7 @@ public class TestBase extends TestData {
         Configuration.browserCapabilities = capabilities;
         Configuration.startMaximized = true;
         //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
-        Configuration.remote = String.format("https://%s:%s@%s", loginForSelenoid,passwordForSelenoid,selenoidRemoteAddress);
+        Configuration.remote = String.format("https://user1:1234@%s", selenoidRemoteAddress);
     }
 
     protected static void beforeAll() {
