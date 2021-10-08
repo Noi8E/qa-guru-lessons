@@ -21,6 +21,7 @@ public class SystemProps {
     void someTest2() {
         String val = System.getProperty("browser","chrome");
         String val2 = System.getProperty("version", "90");
+        String val2 = System.getProperty("resolution", "100*100");
         System.out.println(val);
         System.out.println(val2);
     }
