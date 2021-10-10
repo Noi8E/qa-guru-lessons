@@ -4,6 +4,7 @@ import guru.qa.pages.RegistrationPage;
 import guru.qa.pages.components.CalendarComponent;
 import guru.qa.pages.components.HobbiesComponent;
 import guru.qa.pages.components.SubjectComponent;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.io.File;
@@ -28,7 +29,7 @@ public class PracticeFormTests extends TestBase {
         calendar.setDate(dayCalendar,monthCalendar,yearCalendar);
         subject.setSubject(subjectValue1,subjectValue2);
         hobbiesComponent.setHobbies(rndHobbies1,rndHobbies2);
-        registrationPage.getUploadPicture(new File("src/test/resources/BoJack-on-Behance.png"));
+        registrationPage.getUploadPicture(new File("src/test/resources/images/BoJack.png"));
         registrationPage.setAddress(rndAddres);
         registrationPage.setState(rndState);
         registrationPage.setCity(rndCity);
@@ -45,7 +46,7 @@ public class PracticeFormTests extends TestBase {
         registrationPage.checkFinalTable("Date of Birth", dayCalendar + " " + monthCalendar + "," + yearCalendar);
         registrationPage.checkFinalTable("Subjects", subjectValue1 + ", " + subjectValue2 );
         registrationPage.checkFinalTable("Hobbies", rndHobbies1 + ", " + rndHobbies2);
-        registrationPage.checkFinalTable("Picture", "images/BoJack-on-Behance.png");
+        registrationPage.checkFinalTable("Picture", "BoJack.png");
         registrationPage.checkFinalTable("Address", rndAddres);
         registrationPage.checkFinalTable("State and City", rndState + " " + rndCity);
 
