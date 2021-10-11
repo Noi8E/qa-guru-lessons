@@ -26,7 +26,6 @@ public class TestBase extends TestData {
         Configuration.browserCapabilities = capabilities;
         String login = credentials.login();
         String password = credentials.password();
-        //Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
         Configuration.remote = String.format("https://%s:%s@%s",login, password, selenoidRemoteAddress);
     }
 
