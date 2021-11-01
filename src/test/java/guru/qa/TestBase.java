@@ -15,12 +15,13 @@ public class TestBase extends TestData {
     static void sayHello() {
         System.out.println("Hi this is simple test for demo.qa\n");
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        capabilities.setCapability("enableVNC",true);
-        capabilities.setCapability("enableVideo",true);
+        capabilities.setCapability("enableVNC", true);
+        capabilities.setCapability("enableVideo", true);
         Configuration.browserCapabilities = capabilities;
         Configuration.startMaximized = true;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
+
     static void beforeAll() {
         Configuration.startMaximized = true;
         Configuration.baseUrl = "https://demoqa.com";

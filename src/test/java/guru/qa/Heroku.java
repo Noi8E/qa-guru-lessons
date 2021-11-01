@@ -13,7 +13,6 @@ import static com.codeborne.selenide.Selenide.open;
 public class Heroku {
     @BeforeAll
     static void sayHello() {
-        System.out.println("Hi this is simple test for demo.qa\n");
         Configuration.startMaximized = true;
     }
 
