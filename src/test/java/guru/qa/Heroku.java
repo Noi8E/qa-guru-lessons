@@ -19,7 +19,6 @@ public class Heroku {
 
     @AfterAll
     static void sayGoodBye() {
-        System.out.println("Bye guys!");
         Selenide.closeWebDriver();
     }
 }
