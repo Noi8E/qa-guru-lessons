@@ -13,7 +13,7 @@ public class TestBase extends TestData {
 
     @BeforeAll
     static void sayHello() {
-        System.out.println("Hi this is simple test for demo.qa\n");
+        System.out.println("Hi this is simple test For demo.qa\n");
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC",true);
         capabilities.setCapability("enableVideo",true);
