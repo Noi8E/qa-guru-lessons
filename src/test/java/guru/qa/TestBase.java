@@ -10,7 +10,6 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class TestBase extends TestData {
 
-
     @BeforeAll
     static void sayHello() {
         System.out.println("Hi this is simple test For demo.qa\n");
@@ -21,6 +20,7 @@ public class TestBase extends TestData {
         Configuration.startMaximized = true;
         Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub/";
     }
+
     static void beforeAll() {
         Configuration.startMaximized = true;
         Configuration.baseUrl = "https://demoqa.com";
@@ -39,5 +39,4 @@ public class TestBase extends TestData {
         System.out.println("Bye guys!");
         Selenide.closeWebDriver();
     }
-
 }

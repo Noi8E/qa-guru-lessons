@@ -2,29 +2,24 @@ package guru.qa;
 
 import com.github.javafaker.Faker;
 
-import java.util.Random;
-
 public  class TestData {
 
+    Faker faker = new Faker();
 
-    public String firstName = new Faker().name().firstName();
-    public String lastName = new Faker().name().lastName();
-    public String userEmail = new Faker().internet().emailAddress("qa_guru");
-    public String studentGender = "Male";
-    public String phoneNumber = new Faker().phoneNumber().subscriberNumber(10);
-
-    public String dayCalendar = new Faker().random().nextInt(10,30).toString();
-    public String monthCalendar = "July";
-    public String yearCalendar = new Faker().random().nextInt(1923,2020).toString();
-
-    public String subjectValue1 = "Maths";
-    public String subjectValue2 = "Chemistry";
-
-    public String rndHobbies1 = "Sports";
-    public String rndHobbies2 = "Reading";
-
-    public String rndAddres = new Faker().address().fullAddress();
-    public String rndState = "Haryana";
-    public String rndCity = "Panipat";
-
+    public String firstName = faker.name().firstName(),
+            lastName = faker.name().lastName(),
+            userEmail = faker.internet().emailAddress("qa_guru"),
+            studentGender = faker.demographic().sex(),
+            phoneNumber = faker.phoneNumber().subscriberNumber(10),
+            dayCalendar = faker.random().nextInt(10,30).toString(),
+            monthCalendar = "July",
+            yearCalendar = faker.random().nextInt(1923,2020).toString(),
+            subjectValue1 = "Maths",
+            subjectValue2 = "Chemistry",
+            rndHobbies1 = "Sports",
+            rndHobbies2 = "Reading",
+            picture = "BoJack-on-Behance.png",
+            rndAddres = faker.address().fullAddress(),
+            rndState = "Haryana",
+            rndCity = "Panipat";
 }

@@ -3,27 +3,27 @@ package guru.qa.pages;
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.ElementsCollection;
 import com.codeborne.selenide.SelenideElement;
-import com.github.javafaker.Faker;
+import org.assertj.core.api.SoftAssertions;
 
 import java.io.File;
 import java.util.Map;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
+import static java.lang.String.format;
 
 public class RegistrationPage {
 
-    protected static final String URL = "/automation-practice-form";
-    ;
-    private final String FORM_TITLE = "Student Registration Form";
+    protected final static String URL = "/automation-practice-form";
+
+    private final static String FORM_TITLE = "Student Registration Form";
 
     private SelenideElement
             formTitle = $(".practice-form-wrapper"),
             firstNameInput = $x("//*[@id='firstName']"),
             lastNameInput = $x("//*[@id='lastName']"),
             emailInput = $("#userEmail"),
-            genterInput = $("[name=gender][value=Male]"),
+          //genterInput = $("[name=gender][value=Male]"), //больше не нужен, т.к метод немного поменялся
             phoneNumberInput = $("#userNumber"),
             uploadPicture = $("#uploadPicture"),
             addressInput = $("#currentAddress"),
@@ -50,8 +50,9 @@ public class RegistrationPage {
         emailInput.setValue(email);
     }
 
-    public void setGender() {
-        genterInput.parent().click();
+    public RegistrationPage setGender(String gender) {
+        $(format("[name=gender][value=%s]", gender)).parent().click();
+        return this;
     }
 
     public void setPhoneNumber(String phone) {
@@ -83,9 +84,24 @@ public class RegistrationPage {
         modalWindowHeader.shouldHave(text("Thanks for submitting the form"));
     }
 
-    public void checkFinalTable(String name, String value) {
-        $x("//td[text()=" + "'" + name + "'" + "]/following-sibling::td").shouldHave(text(value));
+    public void checkFinalTable(Map<String, String> expectedData) {
+        ElementsCollection popupResults = $$(".table-responsive tbody tr").snapshot();
+
+        SoftAssertions softly = new SoftAssertions();
+
+        for (SelenideElement popupResult : popupResults) {
+            String line = popupResult.$("td").text();
+            String expectedValue = expectedData.get(line);
+            String actualValue = popupResult.$("td", 1).text();
+
+            softly.assertThat(actualValue)
+                    .as(format("Result in line %s was %s, but expected %s", line, actualValue, expectedValue))
+                    .isEqualTo(expectedValue);
+        }
+        softly.assertAll();
     }
 
-
+//    public void checkFinalTable(String name, String value) {
+//        $x("//td[text()=" + "'" + name + "'" + "]/following-sibling::td").shouldHave(text(value));
+//    }
 }
